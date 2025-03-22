@@ -180,12 +180,13 @@ export const loginUser = CatchAsyncError(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const { email, password } = req.body as ILoginRequest;
-
+      console.log(email, password);
       if (!email || !password) {
         return next(new ErrorHandler("Please enter email and password", 400));
       }
 
       const user = await userModel.findOne({ email }).select("+password");
+
       if (!user) {
         return next(new ErrorHandler("Invalid email or password", 400));
       }
@@ -194,8 +195,6 @@ export const loginUser = CatchAsyncError(
       if (!isPasswordMatch) {
         return next(new ErrorHandler("Invalid email or password", 400));
       }
-
-      // Instead of sending the token in headers, set it in a cookie
       sendToken(user, 200, res);
     } catch (error: any) {
       return next(new ErrorHandler(error.message, 400));

@@ -38,36 +38,18 @@ export const refreshTokenOptions: ITokenOptions = {
   secure: true,
 };
 
-// export const sendToken = (user: IUser, statusCode: number, res: Response) => {
-//   const accessToken = user.SignAccessToken();
-//   const refreshToken = user.SignRefreshToken();
-//   // upload session to redis
-//   redis.set(user._id as string, JSON.stringify(user) as any);
+export const sendToken = (user: IUser, statusCode: number, res: Response) => {
+  const accessToken = user.SignAccessToken();
+  const refreshToken = user.SignRefreshToken();
+  // upload session to redis
 
-//   res.status(statusCode).json({
-//     success: true,
-//     user,
-//     accessToken,
-//     refreshToken,
-//   });
-// };
+  redis.set(user._id as string, JSON.stringify(user) as any);
 
-
-
-export const sendToken = (user: any, statusCode: number, res: Response) => {
-  const token = user.getJWTToken();
-
-  // Cookie options
-  const options = {
-    expires: new Date(Date.now() + 24 * 60 * 60 * 1000), // 1 day expiry
-    httpOnly: true, // Secure against XSS
-    secure: process.env.NODE_ENV === "production", // Only secure in production
-    sameSite: "strict" as "strict",
-  };
-
-  res.status(statusCode).cookie("access_token", token, options).json({
+  res.cookie("access-token", accessToken, accessTokenOptions);
+  res.status(statusCode).json({
     success: true,
     user,
-    token, // Still returning for reference
+    accessToken,
+    refreshToken,
   });
 };
