@@ -1,7 +1,14 @@
 "use client";
 
 import * as React from "react";
-import { Bot, Command, Dog, LayoutDashboard, Sprout } from "lucide-react";
+import {
+  Bot,
+  ClockFading,
+  Command,
+  Dog,
+  LayoutDashboard,
+  Sprout,
+} from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { NavUser } from "@/components/nav-user";
@@ -27,6 +34,11 @@ export const data = {
       title: "Chatbot",
       url: "/dashboard/chatbot",
       icon: Bot,
+    },
+    {
+      title: "Seasonal Advisor",
+      url: "/dashboard/seasonal-advisor",
+      icon: ClockFading,
     },
     {
       title: "Plant Disease Diagnosis",
