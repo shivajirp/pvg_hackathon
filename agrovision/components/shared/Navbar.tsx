@@ -113,23 +113,6 @@ const Navbar = () => {
                   Sign Up
                 </Link>
                 <div className="h-8 w-px bg-zinc-200 dark:bg-zinc-700 hidden sm:block" />
-
-                {/* Theme Switcher */}
-                {mounted && (
-                  <Button
-                    size="icon"
-                    variant="outline"
-                    onClick={() =>
-                      setTheme(theme === "dark" ? "light" : "dark")
-                    }
-                  >
-                    {theme === "dark" ? (
-                      <Sun className="h-5 w-5" />
-                    ) : (
-                      <Moon className="h-5 w-5" />
-                    )}
-                  </Button>
-                )}
               </>
             )}
           </div>
