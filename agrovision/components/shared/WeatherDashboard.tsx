@@ -1,13 +1,12 @@
 import React from "react";
 import { WeatherData } from "@/types/weather";
-import MaxWidthWrapper from "../MaxWidthWrapper";
-import CurrentWeatherCard from "@/app/(AI-Model)/dashboard/weather/_components/CurrentWeatherCard";
-import WindPressureCard from "@/app/(AI-Model)/dashboard/weather/_components/WindPressureCard";
-import HourlyForecast from "@/app/(AI-Model)/dashboard/weather/_components/HourlyForecast";
-import AirPollutionChart from "@/app/(AI-Model)/dashboard/weather/_components/AirPollutionChart";
-import TemperatureHumidityChart from "@/app/(AI-Model)/dashboard/weather/_components/TemperatureHumidityChart";
-import DayDuration from "@/app/(AI-Model)/dashboard/weather/_components/DayDuration";
-import ClientMap from "@/app/(AI-Model)/dashboard/weather/_components/ClientMap";
+import CurrentWeatherCard from "@/app/(AI-Model)/dashboard/_components/CurrentWeatherCard";
+import WindPressureCard from "@/app/(AI-Model)/dashboard/_components/WindPressureCard";
+import HourlyForecast from "@/app/(AI-Model)/dashboard/_components/HourlyForecast";
+import AirPollutionChart from "@/app/(AI-Model)/dashboard/_components/AirPollutionChart";
+import TemperatureHumidityChart from "@/app/(AI-Model)/dashboard/_components/TemperatureHumidityChart";
+import DayDuration from "@/app/(AI-Model)/dashboard/_components/DayDuration";
+import ClientMap from "@/app/(AI-Model)/dashboard/_components/ClientMap";
 
 interface WeatherDashboardProps {
   weatherData: WeatherData;
