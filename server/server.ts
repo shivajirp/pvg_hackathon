@@ -8,6 +8,11 @@ export const app = express();
 
 app.use(express.json());
 
+app.use(cors({
+  origin: "http://localhost:3000",
+  credentials: true
+}))
+
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on http://localhost:${process.env.PORT}`);
 });
