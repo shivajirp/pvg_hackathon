@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { BookOpen, Bot, Command, Settings2 } from "lucide-react";
+import { Bot, Command, Dog, LayoutDashboard, Sprout } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { NavUser } from "@/components/nav-user";
@@ -17,16 +17,11 @@ import {
 import Link from "next/link";
 
 export const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
   navMain: [
     {
       title: "Dashboard",
       url: "/dashboard",
-      icon: Command,
+      icon: LayoutDashboard,
     },
     {
       title: "Chatbot",
@@ -36,12 +31,12 @@ export const data = {
     {
       title: "Plant Disease Diagnosis",
       url: "/dashboard/plant-disease",
-      icon: BookOpen,
+      icon: Sprout,
     },
     {
       title: "Cattle Disease Diagnosis",
       url: "/dashboard/cattle-disease",
-      icon: Settings2,
+      icon: Dog,
     },
   ],
 };
@@ -95,7 +90,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarContent>
 
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser />
       </SidebarFooter>
     </Sidebar>
   );
