@@ -4,7 +4,9 @@ import { useState, useRef, useEffect } from "react";
 import { getChatResponse } from "@/actions/chat";
 
 export default function Chatbot() {
-  const [messages, setMessages] = useState<{ text: string; isUser: boolean }[]>([]);
+  const [messages, setMessages] = useState<{ text: string; isUser: boolean }[]>(
+    []
+  );
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
@@ -38,8 +40,15 @@ export default function Chatbot() {
       {/* Scrollable Chat Messages */}
       <div className="flex-1 overflow-y-auto p-4">
         {messages.map((msg, index) => (
-          <div key={index} className={`mb-2 flex ${msg.isUser ? "justify-end" : "justify-start"}`}>
-            <span className={`px-4 py-2 rounded-lg max-w-xs break-words ${msg.isUser ? "bg-blue-500 text-white" : "bg-gray-300 text-black"}`}>
+          <div
+            key={index}
+            className={`mb-2 flex ${msg.isUser ? "justify-end" : "justify-start"}`}
+          >
+            <span
+              className={`px-4 py-2 rounded-lg max-w-xs break-words ${
+                msg.isUser ? "bg-blue-500 text-white" : "bg-gray-300 text-black"
+              }`}
+            >
               {msg.text}
             </span>
           </div>
@@ -64,8 +73,11 @@ export default function Chatbot() {
           placeholder="Type your message..."
         />
         <button
+         
           onClick={handleSendMessage}
+         
           className="px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-r-lg"
+        
           disabled={isLoading}
         >
           Send
