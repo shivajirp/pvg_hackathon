@@ -39,8 +39,8 @@ export const data = {
       icon: BookOpen,
     },
     {
-      title: "Settings",
-      url: "/settings",
+      title: "Cattle Disease Diagnosis",
+      url: "/dashboard/cattle-disease",
       icon: Settings2,
     },
   ],
