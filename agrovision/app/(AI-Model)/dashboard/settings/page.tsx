@@ -33,7 +33,6 @@ import {
 } from "@/components/ui/select";
 import { UserRole } from "@prisma/client";
 import { Switch } from "@/components/ui/switch";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 
 const SettingsPage = () => {
   const user = useCurrentUser();
@@ -73,7 +72,7 @@ const SettingsPage = () => {
   };
 
   return (
-    <MaxWidthWrapper>
+    <div className="flex justify-center items-center h-full">
       <Card className="w-[600px]">
         <CardHeader>
           <p className={"text-2xl font-semibold text-center"}>⚙️ Settings</p>
@@ -185,14 +184,18 @@ const SettingsPage = () => {
               </div>
               <FormError message={error} />
               <FormSuccess message={success} />
-              <Button disabled={isPending} type="submit">
+              <Button
+                disabled={isPending}
+                type="submit"
+                className="bg-green-500"
+              >
                 Submit
               </Button>
             </form>
           </Form>
         </CardContent>
       </Card>
-    </MaxWidthWrapper>
+    </div>
   );
 };
 

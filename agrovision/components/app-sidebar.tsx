@@ -7,6 +7,7 @@ import {
   Command,
   Dog,
   LayoutDashboard,
+  Settings,
   Sprout,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -50,6 +51,11 @@ export const data = {
       url: "/dashboard/cattle-disease",
       icon: Dog,
     },
+    {
+      title: "Settings",
+      url: "/dashboard/settings",
+      icon: Settings,
+    },
   ],
 };
 
@@ -62,13 +68,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="/dashboard">
+              <a href="/">
                 <div className="flex aspect-square size-10 items-center justify-center rounded-lg bg-green-500 text-white">
                   <Command className="size-6" />
                 </div>
                 <div className="grid flex-1 text-left text-base leading-tight">
                   <span className="truncate font-semibold text-lg">
-                    AgroVision Inc
+                    AgroVision
                   </span>
                   <span className="truncate text-sm text-gray-400">
                     Enterprise
