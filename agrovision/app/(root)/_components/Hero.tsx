@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 
 import { Cover } from "@/components/ui/cover";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
