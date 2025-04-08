@@ -1,4 +1,0 @@
-torch
-ultralytics
-gradio
-opencv-python
